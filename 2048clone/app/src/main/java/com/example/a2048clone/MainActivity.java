@@ -10,6 +10,9 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+    int [][] matrix = new int[4][4];
+    EditText[][] textMatrix = new EditText[4][4];
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +24,14 @@ public class MainActivity extends AppCompatActivity {
         Button rightButton = findViewById(R.id.buttonRight);
         Button resetButton = findViewById(R.id.buttonReset);
 
-        int [][] matrix = new int[4] [4];
+        for(int i = 0; i < 4; i++) {
+
+            for(int j = 0; j < 4; j++) {
+
+                System.out.print(i);
+                matrix[i][j] = 0;
+            }
+        }
 
         EditText zeroZero = findViewById(R.id.editText00);
         EditText zeroOne = findViewById(R.id.editText01);
@@ -39,6 +49,23 @@ public class MainActivity extends AppCompatActivity {
         EditText threeOne = findViewById(R.id.editText31);
         EditText threeTwo = findViewById(R.id.editText32);
         EditText threeThree = findViewById(R.id.editText33);
+
+        textMatrix[0][0] = zeroZero;
+        textMatrix[1][0] = zeroOne;
+        textMatrix[2][0] = zeroTwo;
+        textMatrix[3][0] = zeroThree;
+        textMatrix[0][1] = oneZero;
+        textMatrix[1][1] = oneOne;
+        textMatrix[2][1] = oneTwo;
+        textMatrix[3][1] = oneThree;
+        textMatrix[0][2] = twoZero;
+        textMatrix[1][2] = twoOne;
+        textMatrix[2][2] = twoTwo;
+        textMatrix[3][2] = twoThree;
+        textMatrix[0][3] = threeZero;
+        textMatrix[1][3] = threeOne;
+        textMatrix[2][3] = threeTwo;
+        textMatrix[3][3] = threeThree;
 
         int count = 0;
         Random rand = new Random();
@@ -165,7 +192,203 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                for(int i = 0; i < 4; i++) {
 
+                    for(int j = 0; j < 4; j++) {
+
+                        if(matrix[j][i] != 0) {
+
+                            matrix[j][i] = 0;
+                            textMatrix[j][i].setText("", EditText.BufferType.EDITABLE);
+                        }
+                    }
+                }
+
+                int count = 0;
+
+                Random rand = new Random();
+
+                while(count != 2) {
+
+                    int n = rand.nextInt(16);
+
+                    if (n == 0) {
+
+                        if(matrix[0][0] == 2) {
+
+                            continue;
+                        }
+
+                        matrix[0][0] = 2;
+                        textMatrix[0][0].setText("2", EditText.BufferType.EDITABLE);
+                        count += 1;
+
+                    } else if (n == 1) {
+
+                        if(matrix[1][0] == 2) {
+
+                            continue;
+                        }
+
+                        matrix[1][0] = 2;
+                        textMatrix[1][0].setText("2", EditText.BufferType.EDITABLE);
+                        count += 1;
+
+                    } else if (n == 2) {
+
+                        if(matrix[2][0] == 2) {
+
+                            continue;
+                        }
+
+                        matrix[2][0] = 2;
+                        textMatrix[2][0].setText("2", EditText.BufferType.EDITABLE);
+                        count += 1;
+
+                    } else if (n == 3) {
+
+                        if(matrix[3][0] == 2) {
+
+                            continue;
+                        }
+
+                        matrix[3][0] = 2;
+                        textMatrix[3][0].setText("2", EditText.BufferType.EDITABLE);
+                        count += 1;
+
+                    } else if (n == 4) {
+
+                        if(matrix[0][1] == 2) {
+
+                            continue;
+                        }
+
+                        matrix[0][1] = 2;
+                        textMatrix[0][1].setText("2", EditText.BufferType.EDITABLE);
+                        count += 1;
+
+                    } else if (n == 5) {
+
+                        if(matrix[1][1] == 2) {
+
+                            continue;
+                        }
+
+                        matrix[1][1] = 2;
+                        textMatrix[1][1].setText("2", EditText.BufferType.EDITABLE);
+                        count += 1;
+
+                    } else if (n == 6) {
+
+                        if(matrix[2][1] == 2) {
+
+                            continue;
+                        }
+
+                        matrix[2][1] = 2;
+                        textMatrix[2][1].setText("2", EditText.BufferType.EDITABLE);
+                        count += 1;
+
+                    } else if (n == 7) {
+
+                        if(matrix[3][1] == 2) {
+
+                            continue;
+                        }
+
+                        matrix[3][1] = 2;
+                        textMatrix[3][1].setText("2", EditText.BufferType.EDITABLE);
+                        count += 1;
+
+                    } else if (n == 8) {
+
+                        if(matrix[0][2] == 2) {
+
+                            continue;
+                        }
+
+                        matrix[0][2] = 2;
+                        textMatrix[0][2].setText("2", EditText.BufferType.EDITABLE);
+                        count += 1;
+
+                    } else if (n == 9) {
+
+                        if(matrix[1][2] == 2) {
+
+                            continue;
+                        }
+
+                        matrix[1][2] = 2;
+                        textMatrix[1][2].setText("2", EditText.BufferType.EDITABLE);
+                        count += 1;
+
+                    } else if (n == 10) {
+
+                        if(matrix[2][2] == 2) {
+
+                            continue;
+                        }
+
+                        matrix[2][2] = 2;
+                        textMatrix[2][2].setText("2", EditText.BufferType.EDITABLE);
+                        count += 1;
+
+                    } else if (n == 11) {
+
+                        if(matrix[3][2] == 2) {
+
+                            continue;
+                        }
+
+                        matrix[3][2] = 2;
+                        textMatrix[3][2].setText("2", EditText.BufferType.EDITABLE);
+                        count += 1;
+
+                    } else if (n == 12) {
+
+                        if(matrix[0][3] == 2) {
+
+                            continue;
+                        }
+
+                        matrix[0][3] = 2;
+                        textMatrix[0][3].setText("2", EditText.BufferType.EDITABLE);
+                        count += 1;
+
+                    } else if (n == 13) {
+
+                        if(matrix[1][3] == 2) {
+
+                            continue;
+                        }
+
+                        matrix[1][3] = 2;
+                        textMatrix[1][3].setText("2", EditText.BufferType.EDITABLE);
+                        count += 1;
+
+                    } else if (n == 14) {
+
+                        if(matrix[2][3] == 2) {
+
+                            continue;
+                        }
+
+                        matrix[2][3] = 2;
+                        textMatrix[2][3].setText("2", EditText.BufferType.EDITABLE);
+                        count += 1;
+
+                    } else {
+
+                        if(matrix[3][3] == 2) {
+
+                            continue;
+                        }
+
+                        matrix[3][3] = 2;
+                        textMatrix[3][3].setText("2", EditText.BufferType.EDITABLE);
+                        count += 1;
+                    }
+                }
             }
         });
     }
